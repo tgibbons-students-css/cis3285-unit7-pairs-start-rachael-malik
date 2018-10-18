@@ -78,11 +78,13 @@ namespace Services
         /// <returns>returns null if name not found</returns>
         private IAccount FindAccount(string accountName)
         {
+            NullAccount account = new NullAccount();
+
             if (accountsDictionary.ContainsKey(accountName))
             {
                 return accountsDictionary[accountName];
             }
-            return null;
+            return account;
         }
 
     }

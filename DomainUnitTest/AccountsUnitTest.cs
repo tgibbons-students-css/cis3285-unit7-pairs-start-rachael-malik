@@ -131,5 +131,6 @@ namespace DomainUnitTest
             // Assert
             Assert.AreEqual(points, 2000 + 4 + 2000);
         }
+      
     }
 }

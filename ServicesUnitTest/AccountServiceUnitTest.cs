@@ -152,5 +152,18 @@ namespace ServicesUnitTest
             // Assert
             Assert.AreEqual(points, 2000 + 4 + 2000);
         }
+        [TestMethod]
+        public void NullAccountTest()
+        {
+            //Arrange
+            AccountService acctService = new AccountService();
+            //Act
+            string accountName = "TestNull";
+            acctService.Deposit(accountName, 4000M);
+
+            //Assert
+            //no assert needed because test should pass
+        }
+
     }
 }

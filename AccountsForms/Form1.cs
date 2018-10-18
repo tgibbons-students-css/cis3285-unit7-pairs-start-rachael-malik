@@ -28,6 +28,8 @@ namespace AccountsForms
         {
             string accountName = txtAccountName.Text;
             listBoxAccounts.Items.Add(accountName);
+            txtAccountName.Text = ""; 
+
             accService.CreateAccount(accountName, AccountType.Silver);
         }
         /// <summary>
@@ -61,13 +63,25 @@ namespace AccountsForms
         //As a user, I want to be able to deposit an amount, so that I have money in my account.
         private void btnDeposit_Click(object sender, EventArgs e)
         {
+            Decimal amount = Decimal.Parse(txtDepositAmount.Text);
+            string accName = listBoxAccounts.SelectedItem.ToString();
+            accService.Deposit(accName, amount);
+            txtDepositAmount.Text = "";
 
+            Decimal bal = accService.GetAccountBalance(accName);
+            txtBalance.Text = bal.ToString();
         }
 
         //As a user, I want to be able to withdraw money, so that I can purchase items.
         private void btnWithDrawal_Click(object sender, EventArgs e)
         {
+            Decimal amount = Decimal.Parse(txtWithdrawalAmount.Text);
+            string accName = listBoxAccounts.SelectedItem.ToString();
+            accService.Withdrawal(accName, amount);
+            txtWithdrawalAmount.Text = "";
 
+            Decimal bal = accService.GetAccountBalance(accName);
+            txtBalance.Text = bal.ToString();
         }
 
         //As a user, I want to be able to input the exact amount I want to deposit, so that I don't have to visit the bank.
