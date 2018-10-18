@@ -41,6 +41,8 @@
             this.btnWithDrawal = new System.Windows.Forms.Button();
             this.txtWithdrawalAmount = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.pointstxt = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtAccountName
@@ -93,6 +95,7 @@
             this.txtBalance.Name = "txtBalance";
             this.txtBalance.Size = new System.Drawing.Size(100, 20);
             this.txtBalance.TabIndex = 5;
+            this.txtBalance.TextChanged += new System.EventHandler(this.txtBalance_TextChanged);
             // 
             // label3
             // 
@@ -109,6 +112,7 @@
             this.txtDepositAmount.Name = "txtDepositAmount";
             this.txtDepositAmount.Size = new System.Drawing.Size(100, 20);
             this.txtDepositAmount.TabIndex = 7;
+            this.txtDepositAmount.TextChanged += new System.EventHandler(this.txtDepositAmount_TextChanged);
             // 
             // btnDeposit
             // 
@@ -118,6 +122,7 @@
             this.btnDeposit.TabIndex = 8;
             this.btnDeposit.Text = "Deposit";
             this.btnDeposit.UseVisualStyleBackColor = true;
+            this.btnDeposit.Click += new System.EventHandler(this.btnDeposit_Click);
             // 
             // label4
             // 
@@ -136,6 +141,7 @@
             this.btnWithDrawal.TabIndex = 10;
             this.btnWithDrawal.Text = "Withdrawal";
             this.btnWithDrawal.UseVisualStyleBackColor = true;
+            this.btnWithDrawal.Click += new System.EventHandler(this.btnWithDrawal_Click);
             // 
             // txtWithdrawalAmount
             // 
@@ -143,6 +149,7 @@
             this.txtWithdrawalAmount.Name = "txtWithdrawalAmount";
             this.txtWithdrawalAmount.Size = new System.Drawing.Size(100, 20);
             this.txtWithdrawalAmount.TabIndex = 11;
+            this.txtWithdrawalAmount.TextChanged += new System.EventHandler(this.txtWithdrawalAmount_TextChanged);
             // 
             // label5
             // 
@@ -154,11 +161,30 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Wells Fargo Account Creator";
             // 
+            // pointstxt
+            // 
+            this.pointstxt.Location = new System.Drawing.Point(338, 141);
+            this.pointstxt.Name = "pointstxt";
+            this.pointstxt.Size = new System.Drawing.Size(100, 20);
+            this.pointstxt.TabIndex = 13;
+            this.pointstxt.TextChanged += new System.EventHandler(this.pointstxt_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(341, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(76, 13);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Reward Points";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 385);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pointstxt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtWithdrawalAmount);
             this.Controls.Add(this.btnWithDrawal);
@@ -194,6 +220,8 @@
         private System.Windows.Forms.Button btnWithDrawal;
         private System.Windows.Forms.TextBox txtWithdrawalAmount;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox pointstxt;
+        private System.Windows.Forms.Label label6;
     }
 }
 

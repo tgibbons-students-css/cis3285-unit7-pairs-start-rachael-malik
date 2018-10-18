@@ -40,8 +40,47 @@ namespace AccountsForms
         {
             string accName = listBoxAccounts.SelectedItem.ToString();
             decimal balance = accService.GetAccountBalance(accName);
+            string reward = accService.GetRewardPoints(accName).ToString();
 
             txtBalance.Text = balance.ToString();
+            pointstxt.Text = reward.ToString();
+        }
+        //As a user, I want to be able to select the account I want, so that I can deposit or withdraw money to a specific account.
+
+
+        private void txtBalance_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pointstxt_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        //As a user, I want to be able to deposit an amount, so that I have money in my account.
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //As a user, I want to be able to withdraw money, so that I can purchase items.
+        private void btnWithDrawal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //As a user, I want to be able to input the exact amount I want to deposit, so that I don't have to visit the bank.
+        private void txtDepositAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //As a user, I want to be able to input the exact amount of money I want to withdraw, so that I can receive the amount of money I need.
+        private void txtWithdrawalAmount_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

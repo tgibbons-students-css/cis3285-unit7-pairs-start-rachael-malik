@@ -6,37 +6,33 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public abstract class AccountBase
-    {   
-
-        public decimal Balance
+     public interface IAccount
+    {
+        decimal Balance
         {
             get;
-            private set;
+            set;
         }
 
-        public int RewardPoints
+        int RewardPoints
         {
             get;
-            private set;
+            set;
         }
         /// <summary>
         /// Used to add a deposit or subtract a withdrawal from
         /// the account. Withdrawals will have negative amount
         /// </summary>
         /// <param name="amount"></param>
-        public void AddTransaction(decimal amount)
-        {
-            // only award reward points on deposit
-            if (amount>0) RewardPoints += CalculateRewardPoints(amount);
-            // always update balance
-            Balance += amount;
-        }
+        void AddTransaction(decimal amount);
+        
         /// <summary>
         /// Implemented in the child classes
         /// </summary>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public abstract int CalculateRewardPoints(decimal amount);
+        int CalculateRewardPoints(decimal amount);
+
+        
     }
 }
